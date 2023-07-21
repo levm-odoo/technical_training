@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model='ir.ui.view' id='product_template_only_form_view_inherit_registry'>
+            <field name="name">product.template.form.inherit.registry</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+
+                <!-- Adds the Motorcycle Data page in the form -->
+                <xpath expr="//page[@name='inventory']" position="after">
+                    <page name="motorcycle" string="Motorcycle Data" attrs="{'invisible':[('detailed_type','not in',['motorcycle'])]}">
+                        <group>
+                            <group>
+                                <separator string="Motorcycle Information"/>
+                                <field name="make"/>
+                                <field name="model"/>
+                                <field name="year"/>
+                                <field name="curb_weight" string="Curb Weight"/>
+                                <field name="launch_date" string="Launch Date"/>
+                            </group>
+                            
+                            <group>
+                                <separator string="Motor Information"/>
+                                <field name="horsepower"/>
+                                <field name="top_speed" string="Top Speed"/>
+                                <field name="torque"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <separator string="Motor Information"/>
+                                <field name="battery_capacity" string="Battery Capacity"/>
+                                <field name="charge_time" string="Charge Time"/>
+                                <field name="range"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
