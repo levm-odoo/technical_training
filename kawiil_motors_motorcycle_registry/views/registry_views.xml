@@ -15,14 +15,18 @@
                             <separator string="Motorcycle Information"/>
                             <field name="register_date" string="Registration Date" help="The registration date"/>
                             <field name="vin" string="VIN" help="The vehicle identification number "/>
+                            <field name="brand"/>
+                            <field name="model"/>
+                            <field name="year"/>
                             <field name="current_mileage" string="Current Mileage" help="The actual current mileage"/>
                             <field name="license_plate" string="License Plate Number" help="The license plate number"/>
                         </group>
                         
                         <group>
                             <separator string="Owner Information"/>
-                            <field name="first_name" string="First Name"/>
-                            <field name="last_name" string="Last Name"/>
+                            <field name="partner_id" string="Owner" help="The Owner contact"/>
+                            <field name="email" help="The E-mail contact"/>
+                            <field name="phone" help="The phone contact"/>
                         </group>
                     </group>
 
@@ -46,9 +50,11 @@
             <tree string="Registred Motorcycles">
                 <field name="registry_number" string="Registry Number"/>
                 <field name="vin" string="VIN"/>
+                <field name="brand"/>
+                <field name="model"/>
+                <field name="year"/>
                 <field name="license_plate" string="License Plate Number"/>
-                <field name="first_name" string="First Name"/>
-                <field name="last_name" string="Last Name"/>
+                <field name="partner_id" string="Owner"/>
                 <field name="current_mileage" string="Current Mileage" optional="hide"/>
                 <field name="certificate_title" string="Certificate Title" optional="hide"/>
                 <field name="register_date" string="Register Date" optional="hide"/>
@@ -64,9 +70,13 @@
             <search>
                 <field name="registry_number"/>
                 <field name="vin"/>
-                <field name="last_name"/>
                 <field name="license_plate" string="License Plate Number"/>
                 <filter name="groupby_date" string="Register Date" context="{'group_by':'register_date'}"/>
+                
+                <searchpanel>
+                    <field name="partner_id" select="multi" enable_counters="1"/>
+                    <field name="partner_id"/>
+                </searchpanel>
             </search>
         </field>
     </record>
