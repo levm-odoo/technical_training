@@ -10,13 +10,15 @@ This Module is used to keep track of the Motorcycle Registration and Ownership o
     'category' : 'Customized Apps/Kawiil',
     'depends' : ['base'],
     'data' : [
-        # Groups and access rights
+        # Security
+        #   Groups and access rights
         'security/registry_groups.xml',
         'security/ir.model.access.csv',
-        # Record rules
+        #   Record rules
         'security/registry_security.xml',
+        # Data
+        'data/registry_data.xml',
         # Views
-        #   Menus
         'views/registry_menuitems.xml',
         'views/registry_views.xml',
     ],
