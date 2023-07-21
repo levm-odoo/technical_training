@@ -17,3 +17,6 @@ class MotorcycleRegistry(models.Model) :
     license_plate = fields.Char(required=True)
     certificate_title = fields.Binary()
     register_date = fields.Date()
+    # Used to force the domain in the Record Rule 'only_active_modify'
+    #   Allows to modify those records that has this property as True
+    active = fields.Boolean(default=True)

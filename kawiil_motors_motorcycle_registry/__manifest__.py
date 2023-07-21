@@ -9,7 +9,13 @@ This Module is used to keep track of the Motorcycle Registration and Ownership o
     'website' : 'https://www.github.com/levm-odoo',
     'category' : 'Customized Apps/Kawiil',
     'depends' : ['base'],
-    'data' : [],
+    'data' : [
+        # Groups and access rights
+        'security/registry_groups.xml',
+        'security/ir.model.access.csv',
+        # Record rules
+        'security/registry_security.xml'
+    ],
     'demo' : [
         'demo/registry_demo.xml'
     ],
