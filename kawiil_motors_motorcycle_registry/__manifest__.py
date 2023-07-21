@@ -17,7 +17,8 @@ This Module is used to keep track of the Motorcycle Registration and Ownership o
         'security/registry_security.xml',
         # Views
         #   Menus
-        'views/registry_menuitems.xml'
+        'views/registry_menuitems.xml',
+        'views/registry_views.xml',
     ],
     'demo' : [
         'demo/registry_demo.xml'
