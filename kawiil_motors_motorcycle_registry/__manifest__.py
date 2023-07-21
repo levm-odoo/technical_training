@@ -7,7 +7,7 @@ This Module is used to keep track of the Motorcycle Registration and Ownership o
     'license' : 'OPL-1',
     'author' : 'levm-odoo',
     'website' : 'https://www.github.com/levm-odoo',
-    'category' : 'Kawiil',
+    'category' : 'Customized Apps/Kawiil',
     'depends' : ['base'],
     'data' : [],
     'demo' : [],
