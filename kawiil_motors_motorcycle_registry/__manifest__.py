@@ -10,6 +10,8 @@ This Module is used to keep track of the Motorcycle Registration and Ownership o
     'category' : 'Customized Apps/Kawiil',
     'depends' : ['base'],
     'data' : [],
-    'demo' : [],
+    'demo' : [
+        'demo/registry_demo.xml'
+    ],
     'application' : True,
 }
