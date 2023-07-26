@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="registred_motorcycles_website">
+            <t t-call="website.layout">
+                <t t-set="title">Registry</t>
+                <div class="oe_structure">
+                    <div class="container">
+                        <h1>Registries</h1>
+                        <t t-foreach="motorcycles" t-as="motorcycle">
+                            <h3>
+                                <t t-esc="motorcycle.id"/>
+                                <a t-attf-href="/registry/{{ slug(motorcycle) }}">
+                                    <t t-esc="motorcycle.registry_number"/>
+                                </a>
+                            </h3>
+                            <p>VIN:
+                                <span t-field="motorcycle.vin"/>
+                            </p>
+                            <p>License Plate Number:
+                                <span t-field="motorcycle.license_plate"/>
+                            </p>
+
+                            <strong>Specs</strong>
+                            <p t-if="motorcycle.current_mileage">Current Mileage:
+                                <t t-esc="motorcycle.current_mileage"/>
+                            </p>
+                            <p t-if="motorcycle.certificate_title">Certificate Title:
+                                <t t-esc="motorcycle.certificate_title"/>
+                            </p>
+                            <p t-if="motorcycle.register_date">Registrated:
+                                <span t-field="motorcycle.register_date" t-field-options='{"format":"long"}'/>
+                            </p>
+                            <hr/>
+                        </t>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <template id="registred_motorcycle_website">
+            <t t-call="website.layout">
+                <t t-set="title">Motorcycle</t>
+                <div class="oe_structure">
+                    <div class="container">
+                        <h1>Registry</h1>
+                        <h3>
+                            <t t-esc="motorcycle.registry_number"/>
+                        </h3>
+                        <img t-if="motorcycle.picture" t-attf-src="data:image/jpg;base64,{{ motorcycle.picture }}"/>  
+                    </div>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

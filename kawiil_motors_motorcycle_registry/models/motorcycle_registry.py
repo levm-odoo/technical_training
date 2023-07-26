@@ -19,8 +19,8 @@ class MotorcycleRegistry(models.Model) :
         string="Registry number",
         default=lambda self: self.env['ir.sequence'].next_by_code('motorcycle.registry.number'))
     vin = fields.Char(required=True)
-    first_name = fields.Char(required=True)
-    last_name = fields.Char(required=True)
+    #first_name = fields.Char(required=True)
+    #last_name = fields.Char(required=True)
     picture = fields.Image()
     current_mileage = fields.Float()
     license_plate = fields.Char(required=True)

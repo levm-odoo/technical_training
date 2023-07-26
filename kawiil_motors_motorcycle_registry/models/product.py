@@ -8,10 +8,6 @@ class ProductTemplate(models.Model):
         ('motorcycle', 'Motorcycle'),
         ], ondelete={'motorcycle': 'set product'}
     )
-    type = fields.Selection(selection_add=[
-        ('motorcycle', 'Storable Product'),
-        ], ondelete={'motorcycle': 'set product'}
-    )
     # New fields
     horsepower = fields.Float()
     top_speed = fields.Float()
@@ -32,3 +28,6 @@ class ProductTemplate(models.Model):
     model = fields.Char()
     year = fields.Integer()
     launch_date = fields.Date()
+
+    def _detailed_type_mapping(self):
+        return {'motorcycle':'product'}

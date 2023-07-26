@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="compare_motorcycles_website">
+            <t t-call="website.layout">
+                <t t-set="title">Motorcycle Comparison</t>
+                <div class="oe_structure">
+                    <div class="container">
+                        <h1>Motorcycle Comparison</h1>
+                        <!-- No products identified as motorcycles -->
+                        <t t-if="num_products">
+                            <div style="display: flex; widht:100vw; margin: 20px;">
+                                <div>
+                                    <!-- Columns Specs Table -->
+                                    <table class="table">
+                                        <thead class="thead-dark">
+                                            <tr><th scope="col" style="background: #212529; color: white;">Specs</th></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><th scope="row">Launch Date</th></tr>
+                                            <tr><th scope="row">Range</th></tr>
+                                            <tr><th scope="row">Horsepower</th></tr>
+                                            <tr><th scope="row">Torque</th></tr>
+                                            <tr><th scope="row">Top Speed</th></tr>
+                                            <tr><th scope="row">Battery Capacity</th></tr>
+                                            <tr><th scope="row">Curb Weight</th></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div style="flex-grow:1; display: flex;">
+                                    <!-- Motorcycle data tables -->
+                                    <t t-foreach="motorcycles" t-as="motorcycle">
+                                        <table class="table">
+                                            <thead class="thead-dark">
+                                                <tr><th scope="col" style="background: #212529; color: white;"><t t-esc="motorcycle.name"/></th></tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td><t t-field="motorcycle.launch_date" t-field-options="{'format':'long'}"/></td></tr>
+                                                <tr><td><t t-esc="motorcycle.range"/></td></tr>
+                                                <tr><td><t t-esc="motorcycle.horsepower"/></td></tr>
+                                                <tr><td><t t-esc="motorcycle.torque"/></td></tr>
+                                                <tr><td><t t-esc="motorcycle.top_speed"/></td></tr>
+                                                <tr><td><t t-esc="motorcycle.battery_capacity"/></td></tr>
+                                                <tr><td><t t-esc="motorcycle.curb_weight"/></td></tr>
+                                            </tbody>
+                                        </table>
+                                    </t>
+                                </div>
+                            </div>
+
+                        </t>
+
+                        <t t-else="">
+                            <div style="width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center;">
+                                <h2>¡There is no motorcycles yet!</h2>
+                                <p>You can register a new motorcycle adding it as a product and selecting <strong>"Motorcycle"</strong> in the <i>Product type</i> </p>
+                            </div>
+                        </t>
+
+                    </div>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>
